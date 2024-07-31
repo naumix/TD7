@@ -8,7 +8,7 @@ import torch
 import TD7
 from dmc_gym import make_env_dmc
 
-
+'''
 class Args:
 	env: str = 'cheetah-run'
 	seed: int = 0
@@ -17,7 +17,7 @@ class Args:
 	eval_freq: int = 5000
 	eval_eps: int = 5
 	max_timesteps: int = 15000
-
+'''
 
 def maybe_evaluate_and_print(RL_agent, eval_env, evals, t, start_time, args, d4rl=False):
 	if t % args.eval_freq == 0:
@@ -90,7 +90,7 @@ def train_online(RL_agent, env, eval_env, args):
             
             
 if __name__ == "__main__":
-	'''
+	
 	parser = argparse.ArgumentParser()
 	# RL
 	parser.add_argument("--env", default="HalfCheetah-v4", type=str)
@@ -104,10 +104,10 @@ if __name__ == "__main__":
 	parser.add_argument("--max_timesteps", default=1e6, type=int)
 	# File
 	args = parser.parse_args()
-	'''
+	
 	if not os.path.exists("./results"):
 		os.makedirs("./results")
-	args = Args()
+	#args = Args()
 	args.file_name = f"TD7_{args.env}_{args.seed}"
 	env = make_env_dmc('cheetah-run', args.seed, 1)
 	eval_env = make_env_dmc('cheetah-run', args.seed+42, 1)
