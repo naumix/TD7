@@ -109,8 +109,8 @@ if __name__ == "__main__":
 		os.makedirs("./results")
 	#args = Args()
 	args.file_name = f"TD7_{args.env}_{args.seed}"
-	env = make_env_dmc('cheetah-run', args.seed, 1)
-	eval_env = make_env_dmc('cheetah-run', args.seed+42, 1)
+	env = make_env_dmc(args.env, args.seed, 1)
+	eval_env = make_env_dmc(args.env, args.seed+42, 1)
 
 	print("---------------------------------------")
 	print(f"Algorithm: TD7, Env: {args.env}, Seed: {args.seed}")
